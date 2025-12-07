@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <graphics.h>
 
-void drawShape(void);
 void drawShape(void)
 {
 	//绘制一个点
@@ -33,6 +32,10 @@ void drawShape(void)
 	//绘制折线条
 	POINT points[] = {{0, 0}, {20, 20}, {50, 80}, {10, 60}};
 	polyline(points, 4);
+}
+void drawText(void)
+{
+
 }
 
 int main()
