@@ -1,0 +1,80 @@
+# ========================== Visual Studio 专属（C++项目核心）==========================
+# VS解决方案/项目配置（本地用户配置，无需上传）
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+*.vcxproj.filters.user
+.vs/                # VS缓存目录（含IntelliSense、调试配置等，体积易变大）
+ipch/               # VS智能感知缓存目录（C++专属，常生成大文件）
+Browse.VC.db        # VS浏览数据库文件（C++项目大文件核心来源）
+Browse.VC.opendb
+
+# ========================== 编译产物（C++核心忽略项）==========================
+# 编译输出目录（MSVC默认）
+Debug/
+Release/
+x64/
+x86/
+Win32/
+# 编译中间文件
+obj/
+bin/
+# 二进制产物（大文件，可重新编译，无需上传）
+*.obj               # 目标文件
+*.o                 # MinGW目标文件
+*.lib               # 静态库（若为第三方大库必忽略，自研库可保留）
+*.dll               # 动态库（同上）
+*.exe               # 可执行文件
+*.pdb               # 调试符号文件（体积大，本地调试用）
+*.ilk               # 增量链接文件
+*.manifest          # 应用程序清单文件
+*.pch               # 预编译头文件（C++专属大文件）
+*.idb               # 增量编译数据库文件
+*.res               # 资源编译文件
+*.tlog              # 编译日志文件
+
+# ========================== CMake/其他构建工具（可选，按需保留）==========================
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+_deps/
+build/              # CMake自定义构建目录
+out/                # 自定义输出目录
+
+# ========================== 大文件专项忽略（解决GitHub 50MB限制）==========================
+# 大型资源/压缩文件
+*.zip
+*.rar
+*.7z
+*.iso
+*.bin
+*.img
+# 大型媒体/数据文件
+*.mp4
+*.avi
+*.wav
+*.csv               # 若为大型数据集，建议用Git LFS而非忽略
+*.dat
+# 日志/临时文件（易积成大文件）
+*.log
+*.tmp
+*.temp
+*.bak               # 备份文件
+*.old               # 旧文件
+
+# ========================== 编辑器/工具缓存（通用）==========================
+.vscode/            # VS Code配置
+.idea/              # CLion/IDEA配置
+.DS_Store           # Mac系统文件
+Thumbs.db           # Windows缩略图缓存
+
+# ========================== 自定义忽略（按需修改）==========================
+# 示例：若项目有大型第三方库目录，手动添加
+# 3rdParty/Libs/     # 第三方大库目录
+# Data/LargeDatasets/ # 大型数据集目录
