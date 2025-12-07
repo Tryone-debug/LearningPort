@@ -35,7 +35,15 @@ void drawShape(void)
 }
 void drawText(void)
 {
-
+	printf("Hello EasyX!");
+	//设置文字大小
+	settextstyle(48, 0, "微软雅黑");
+	//设置文字颜色
+	settextcolor(BROWN);
+	//设置背景模式
+	setbkmode(TRANSPARENT);
+	//绘制文字
+	outtextxy(10, 10, "Hello EasyX!");
 }
 
 int main()
@@ -48,6 +56,7 @@ int main()
 	cleardevice();
 
 	drawShape();
+	drawText();
 	
 	getchar();
 
