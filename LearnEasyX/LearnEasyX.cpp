@@ -64,7 +64,7 @@ void centerText(void)
 int main()
 {
 	//创建一个图形窗口 宽度*高度
-	initgraph(640, 480, EX_NOMINIMIZE);
+	initgraph(640, 480, EX_NOMINIMIZE | EX_DBLCLKS);
 	//设置窗口的背景颜色
 	setbkcolor(WHITE);
 	//用设置的颜色填充整个背景窗口
@@ -76,30 +76,48 @@ int main()
 	
 	//定义消息结构体变量
 	ExMessage msg = { 0 };
+	int i = 0;
 	while (true) 
 	{
 		//获取消息
-		if (peekmessage(&msg, EX_MOUSE))
+		if (peekmessage(&msg, EX_MOUSE | EX_KEY))
 		{
-			switch(msg.message)
-			{
-			case WM_LBUTTONDOWN:
-				printf("鼠标左键按下\n");
-				break;
-			case WM_RBUTTONDOWN:
-				printf("鼠标右键按下\n");
-				break;
-			case WM_MBUTTONDOWN:
-				printf("鼠标中键按下\n");
-				break;
-			case WM_MOUSEWHEEL:
-				printf("鼠标滚轮滚动\n");
-				break;
-			case WM_LBUTTONDBLCLK:
-				printf("鼠标左键双击\n");
-				break;
-			}
+			//switch(msg.message)
+			//{
+			//case WM_LBUTTONDOWN:
+			//	printf("鼠标左键按下 pos(%d,%d)\n",msg.x, msg.y); 
+			//	break;
+			//case WM_RBUTTONDOWN:
+			//	printf("鼠标右键按下\n");
+			//	break;
+			//case WM_MBUTTONDOWN:
+			//	printf("鼠标中键按下\n");
+			//	break;
+			//case WM_MOUSEWHEEL:
+			//	printf("鼠标滚轮滚动 dir(%d)\n", msg.wheel);
+			//	break;
+			//case WM_LBUTTONDBLCLK:
+			//	printf("鼠标左键双击\n");
+			//	break;
+			//case WM_MOUSEMOVE:
+			//	//printf("鼠标移动\n");
+			//	break;
+			//}
 		}
+		//双缓冲绘图，所有的代码必须放在begin和end之间
+		/*BeginBatchDraw();
+		cleardevice();
+		if (button(20, 20, 150, 35,"start game"))*/
+		//判断按键消息
+		/*if (msg.message == WM_KEYDOWN)
+		{
+			printf("keydown\n");
+		}
+		else if (msg.message == WM_KEYUP)
+		{
+			printf("keyup\n");
+		}
+		EndBatchDraw();*/
 	}
 	getchar();
 
