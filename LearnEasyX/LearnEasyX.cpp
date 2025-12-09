@@ -45,6 +45,10 @@ void drawText(void)
 	//»æÖÆÎÄ×Ö
 	outtextxy(10, 10, "Hello EasyX!");
 }
+void centerText(void)
+{
+
+}
 
 int main()
 {
@@ -57,6 +61,7 @@ int main()
 
 	drawShape();
 	drawText();
+	centerText();
 	
 	getchar();
 
