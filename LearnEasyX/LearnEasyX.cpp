@@ -47,7 +47,18 @@ void drawText(void)
 }
 void centerText(void)
 {
+	//来一个矩形
+	int rx = 30, ry = 380, rw = 200, rh = 60;
+	setfillcolor(BLUE);
+	fillrectangle(rx, ry, rx + rw, ry + rh);
 
+	//绘制文字
+	settextcolor(YELLOW);
+	char str[] = "Center Text";
+	int hSpace = (rw - textwidth(str)) / 2;
+	int vSpace = (rh - textheight(str)) / 2;
+
+	outtextxy(rx + hSpace, ry + vSpace, str);
 }
 
 int main()
@@ -59,10 +70,37 @@ int main()
 	//用设置的颜色填充整个背景窗口
 	cleardevice();
 
-	drawShape();
-	drawText();
-	centerText();
+	//drawShape();
+	//drawText();
+	//centerText();
 	
+	//定义消息结构体变量
+	ExMessage msg = { 0 };
+	while (true) 
+	{
+		//获取消息
+		if (peekmessage(&msg, EX_MOUSE))
+		{
+			switch(msg.message)
+			{
+			case WM_LBUTTONDOWN:
+				printf("鼠标左键按下\n");
+				break;
+			case WM_RBUTTONDOWN:
+				printf("鼠标右键按下\n");
+				break;
+			case WM_MBUTTONDOWN:
+				printf("鼠标中键按下\n");
+				break;
+			case WM_MOUSEWHEEL:
+				printf("鼠标滚轮滚动\n");
+				break;
+			case WM_LBUTTONDBLCLK:
+				printf("鼠标左键双击\n");
+				break;
+			}
+		}
+	}
 	getchar();
 
 	return 0;
