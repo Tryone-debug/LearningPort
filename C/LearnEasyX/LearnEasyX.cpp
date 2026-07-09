@@ -1,0 +1,125 @@
+#include <stdio.h>
+#include <graphics.h>
+
+void drawShape(void)
+{
+	//绘制一个点
+	putpixel(50, 50, RED);
+	//设置线条颜色
+	setlinecolor(BLACK);
+	//设置线条样式
+	setlinestyle(PS_SOLID, 3);
+	//绘制一条线
+	line(0, 0, getwidth(), getheight());
+	//绘制一个正矩形
+	rectangle(100, 0, 100 + 50, 0 + 50);  //无填充矩形
+	//设置填充颜色
+	setfillcolor(YELLOW);
+	fillrectangle(100, 50, 100 + 50, 50 + 50);//填充矩形
+	solidrectangle(100, 100, 100 + 50, 100 + 50);
+	//绘制一个圆角矩形
+	roundrect(160, 0, 160 + 50, 0 + 50, 10, 10);
+	fillroundrect(160, 50, 160 + 50, 50 + 50, 10, 10);
+	solidroundrect(160, 100, 160 + 50, 100 + 50, 10, 10);
+	//绘制一个圆形
+	circle(50, 50, 50);
+	fillcircle(50, 150, 50);
+	solidcircle(50, 250, 50);
+	//绘制一个椭圆
+	ellipse(200, 0, 200 + 50, 0 + 100);
+	fillellipse(200, 0, 200 + 50, 0 + 100);
+	solidellipse(200, 0, 200 + 50, 0 + 100);
+	//绘制折线条
+	POINT points[] = {{0, 0}, {20, 20}, {50, 80}, {10, 60}};
+	polyline(points, 4);
+}
+void drawText(void)
+{
+	printf("Hello EasyX!");
+	//设置文字大小
+	settextstyle(48, 0, "微软雅黑");
+	//设置文字颜色
+	settextcolor(BROWN);
+	//设置背景模式
+	setbkmode(TRANSPARENT);
+	//绘制文字
+	outtextxy(10, 10, "Hello EasyX!");
+}
+void centerText(void)
+{
+	//来一个矩形
+	int rx = 30, ry = 380, rw = 200, rh = 60;
+	setfillcolor(BLUE);
+	fillrectangle(rx, ry, rx + rw, ry + rh);
+
+	//绘制文字
+	settextcolor(YELLOW);
+	char str[] = "Center Text";
+	int hSpace = (rw - textwidth(str)) / 2;
+	int vSpace = (rh - textheight(str)) / 2;
+
+	outtextxy(rx + hSpace, ry + vSpace, str);
+}
+
+int main()
+{
+	//创建一个图形窗口 宽度*高度
+	initgraph(640, 480, EX_NOMINIMIZE | EX_DBLCLKS);
+	//设置窗口的背景颜色
+	setbkcolor(WHITE);
+	//用设置的颜色填充整个背景窗口
+	cleardevice();
+
+	//drawShape();
+	//drawText();
+	//centerText();
+	
+	//定义消息结构体变量
+	ExMessage msg = { 0 };
+	int i = 0;
+	while (true) 
+	{
+		//获取消息
+		if (peekmessage(&msg, EX_MOUSE | EX_KEY))
+		{
+			//switch(msg.message)
+			//{
+			//case WM_LBUTTONDOWN:
+			//	printf("鼠标左键按下 pos(%d,%d)\n",msg.x, msg.y); 
+			//	break;
+			//case WM_RBUTTONDOWN:
+			//	printf("鼠标右键按下\n");
+			//	break;
+			//case WM_MBUTTONDOWN:
+			//	printf("鼠标中键按下\n");
+			//	break;
+			//case WM_MOUSEWHEEL:
+			//	printf("鼠标滚轮滚动 dir(%d)\n", msg.wheel);
+			//	break;
+			//case WM_LBUTTONDBLCLK:
+			//	printf("鼠标左键双击\n");
+			//	break;
+			//case WM_MOUSEMOVE:
+			//	//printf("鼠标移动\n");
+			//	break;
+			//}
+		}
+		//双缓冲绘图，所有的代码必须放在begin和end之间
+		/*BeginBatchDraw();
+		cleardevice();
+		if (button(20, 20, 150, 35,"start game"))*/
+		//判断按键消息
+		/*if (msg.message == WM_KEYDOWN)
+		{
+			printf("keydown\n");
+		}
+		else if (msg.message == WM_KEYUP)
+		{
+			printf("keyup\n");
+		}
+		EndBatchDraw();*/
+	}
+	getchar();
+
+	return 0;
+}

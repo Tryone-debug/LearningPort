@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Feature-draw", "Feature-draw.vcxproj", "{145E5241-04E0-418D-8C23-D1D5E82D5C00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{145E5241-04E0-418D-8C23-D1D5E82D5C00}.Debug|x64.ActiveCfg = Debug|x64
+		{145E5241-04E0-418D-8C23-D1D5E82D5C00}.Debug|x64.Build.0 = Debug|x64
+		{145E5241-04E0-418D-8C23-D1D5E82D5C00}.Debug|x86.ActiveCfg = Debug|Win32
+		{145E5241-04E0-418D-8C23-D1D5E82D5C00}.Debug|x86.Build.0 = Debug|Win32
+		{145E5241-04E0-418D-8C23-D1D5E82D5C00}.Release|x64.ActiveCfg = Release|x64
+		{145E5241-04E0-418D-8C23-D1D5E82D5C00}.Release|x64.Build.0 = Release|x64
+		{145E5241-04E0-418D-8C23-D1D5E82D5C00}.Release|x86.ActiveCfg = Release|Win32
+		{145E5241-04E0-418D-8C23-D1D5E82D5C00}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87278E97-C986-47DC-AF83-E1AB617F1670}
+	EndGlobalSection
+EndGlobal

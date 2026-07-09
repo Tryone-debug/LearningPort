@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d62293b8-15bc-4a06-a0f2-de0f777a195f}</ProjectGuid>
-    <RootNamespace>LearnEasyX</RootNamespace>
+    <ProjectGuid>{145e5241-04e0-418d-8c23-d1d5e82d5c00}</ProjectGuid>
+    <RootNamespace>Featuredraw</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LearnEasyX.cpp" />
+    <ClCompile Include="Feature-draw.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
